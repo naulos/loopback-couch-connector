@@ -1,5 +1,5 @@
 {
-  "name": "loopback-connector-couch",
+  "name": "loopback-couch-connector",
   "version": "0.1.1",
   "description": "CouchDB adapter for Loopback.io",
   "keywords": [
@@ -19,6 +19,10 @@
     {
       "name": "Matteo Angeloni",
       "email": "mattange@gmail.com"
+    },
+    {
+      "name" : "Angelos Katsaris",
+      "email": "akatsaris@gmail.com"
     }
   ],
   "dependencies": {
@@ -34,7 +38,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/moimael/loopback-connector-couch.git"
+    "url": "https://github.com/akat/loopback-couch-connector.git"
   },
   "author": "Matteo Angeloni <mattange@gmail.com>",
   "license": "MIT"
