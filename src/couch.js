@@ -206,6 +206,23 @@ class CouchConnector {
     });
   }
 
+  replaceById(model, id, attributes, options, callback) {
+    debug('CouchDB replaceById');
+    delete attributes._deleted; //prevent accidental deletion
+    return this._nanoReader.get(id, (err, doc) => {     
+      if (err) {
+        return callback && callback(err);
+      }
+      return this.save(model, helpers.merge(doc, attributes), (err, rsp) => {
+        if (err) {
+          return callback && callback(err);
+        }
+        doc._rev = rsp.rev;
+        return callback && callback(null, doc);
+      });
+    });
+  }
+  
   updateAttributes(model, id, attributes, callback) {
     debug('CouchDB updateAttributes');
     delete attributes._deleted;  //prevent accidental deletion
